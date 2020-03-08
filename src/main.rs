@@ -6,8 +6,10 @@ fn main() {
         println!("Request received {} {} {:?}", req.method(), req.uri(), body);
 
         match (req.method().as_str(), req.uri().path()) {
-            ("GET", "/") => Ok(response
-                .body(String::from("Hello From Clever Cloud hosted Rust Server").into_bytes())?),
+            ("GET", "/") => Ok(response.body(
+                String::from("Hello From Rust Server hosted on Clever-Cloud by Jawwad Turabi")
+                    .into_bytes(),
+            )?),
 
             ("POST", "/hello") => Ok(response.body(body.into_bytes())?),
 
