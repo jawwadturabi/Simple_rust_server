@@ -19,6 +19,6 @@ fn main() {
             }
         }
     });
-
+    println!("server is running");
     server.listen("0.0.0.0", "8080");
 }
